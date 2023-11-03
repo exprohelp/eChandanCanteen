@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="reportLedegerDisplay" targetNamespace="http://tempuri.org/reportLedegerDisplay.xsd" xmlns:mstns="http://tempuri.org/reportLedegerDisplay.xsd" xmlns="http://tempuri.org/reportLedegerDisplay.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="reportLedegerDisplay" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="reportLedegerDisplay" msprop:Generator_DataSetName="reportLedegerDisplay" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LedegerDisplay" msprop:Generator_UserTableName="LedegerDisplay" msprop:Generator_RowDeletedName="LedegerDisplayRowDeleted" msprop:Generator_RowChangedName="LedegerDisplayRowChanged" msprop:Generator_RowClassName="LedegerDisplayRow" msprop:Generator_RowChangingName="LedegerDisplayRowChanging" msprop:Generator_RowEvArgName="LedegerDisplayRowChangeEvent" msprop:Generator_RowEvHandlerName="LedegerDisplayRowChangeEventHandler" msprop:Generator_TableClassName="LedegerDisplayDataTable" msprop:Generator_TableVarName="tableLedegerDisplay" msprop:Generator_RowDeletingName="LedegerDisplayRowDeleting" msprop:Generator_TablePropName="LedegerDisplay">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vch_date" msprop:Generator_UserColumnName="vch_date" msprop:Generator_ColumnVarNameInTable="columnvch_date" msprop:Generator_ColumnPropNameInRow="vch_date" msprop:Generator_ColumnPropNameInTable="vch_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="particular" msprop:Generator_UserColumnName="particular" msprop:Generator_ColumnVarNameInTable="columnparticular" msprop:Generator_ColumnPropNameInRow="particular" msprop:Generator_ColumnPropNameInTable="particularColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Vch_type" msprop:Generator_UserColumnName="Vch_type" msprop:Generator_ColumnVarNameInTable="columnVch_type" msprop:Generator_ColumnPropNameInRow="Vch_type" msprop:Generator_ColumnPropNameInTable="Vch_typeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="db_amount" msprop:Generator_UserColumnName="db_amount" msprop:Generator_ColumnVarNameInTable="columndb_amount" msprop:Generator_ColumnPropNameInRow="db_amount" msprop:Generator_ColumnPropNameInTable="db_amountColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="cr_amount" msprop:Generator_UserColumnName="cr_amount" msprop:Generator_ColumnVarNameInTable="columncr_amount" msprop:Generator_ColumnPropNameInRow="cr_amount" msprop:Generator_ColumnPropNameInTable="cr_amountColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="narration" msprop:Generator_UserColumnName="narration" msprop:Generator_ColumnPropNameInRow="narration" msprop:Generator_ColumnVarNameInTable="columnnarration" msprop:Generator_ColumnPropNameInTable="narrationColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

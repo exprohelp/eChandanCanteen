@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="Insert_Modify_item_master">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="item_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="item_Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pack_qty" type="xs:int" />
+        <xs:element minOccurs="0" name="pack_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="prodCategory" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="prodType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hsn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rate" type="xs:decimal" />
+        <xs:element minOccurs="0" name="discount_perc" type="xs:decimal" />
+        <xs:element minOccurs="0" name="TaxIncluded" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taxPerc" type="xs:decimal" />
+        <xs:element minOccurs="0" name="ROL" type="xs:int" />
+        <xs:element minOccurs="0" name="discontinue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Logic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Modify_item_masterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Modify_item_masterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueryResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetQueryResultResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryExecute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="query" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Database" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryExecuteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryExecuteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="feedCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cat_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="feedCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="feedCategoryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVendorDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vend_code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getVendorDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getVendorDetailResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewAndModifyVendor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="vend_code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="vend_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobile_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tin_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="district" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="task" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ledger_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewAndModifyVendorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NewAndModifyVendorResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fillState">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fillStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fillStateResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fillDistrict">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="state_code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fillDistrictResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fillDistrictResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPurchIds">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="num" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPurchIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPurchIdsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ins_Purchase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Purch_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="unit_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comp_code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pur_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Vendor_Code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Inv_No" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Inv_Date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Item_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hsn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mfd_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Batch_No" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Exp_Date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MRP" type="xs:decimal" />
+        <xs:element minOccurs="0" name="trade" type="xs:decimal" />
+        <xs:element minOccurs="0" name="pack_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pack_qty" type="xs:int" />
+        <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+        <xs:element minOccurs="0" name="It_Free" type="xs:decimal" />
+        <xs:element minOccurs="0" name="DisPer" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Tax_id" type="xs:int" />
+        <xs:element minOccurs="0" name="BestRate" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ins_PurchaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Ins_PurchaseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPurchaseRecordByPurchId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="purch_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPurchaseRecordByPurchIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getPurchaseRecordByPurchIdResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_Purchase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="auto_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="purch_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete_PurchaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Delete_PurchaseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurchasePosting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PurchasePostingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PurchasePostingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="feedProductIssueDept">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dept_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="feedProductIssueDeptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="feedProductIssueDeptResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IssueToUse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="unit_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="item_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="master_key_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="issued_qty" type="xs:int" />
+        <xs:element minOccurs="0" name="login_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="issuedTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IssueToUseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IssueToUseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Retail_InsertSale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ds" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="unit_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="card_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sale_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="order_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="payType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="payremark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cust_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="emp_code" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="emp_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hospipopno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="login_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="party_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="old_sale_inv_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cancel_remark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TokenNo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Retail_InsertSaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Retail_InsertSaleResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="processInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Receive_Payment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="unit_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="party_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="party_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paymode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tran_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="login_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="prm_1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Logic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Receive_PaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Receive_PaymentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIssuedItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="auto_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteIssuedItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteIssuedItemsResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="processInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReconcileProduct2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="unit_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logic" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="prm_1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="prm_2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReconcileProduct2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReconcileProduct2Result" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" name="processInfo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Modify_Audit_master">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="unit_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="entry_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="audit_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="master_key_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="qty" type="xs:int" />
+        <xs:element minOccurs="0" name="login_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Logic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert_Modify_Audit_masterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insert_Modify_Audit_masterResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Auto_DispatchForDamageOrExtra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="audit_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="login_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trf_from" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trf_to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="logic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Auto_DispatchForDamageOrExtraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Auto_DispatchForDamageOrExtraResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

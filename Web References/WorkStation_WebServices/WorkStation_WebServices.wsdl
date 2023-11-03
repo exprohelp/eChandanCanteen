@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetQueryResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetQueryResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetQueryResultResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueeryExecute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueeryExecuteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueeryExecuteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createNewJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="assigned_by" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="assigned_to" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="finish_date" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="priority" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Attachment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createNewJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createNewJobResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDocumentRelatedToJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Attachment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDocumentRelatedToJobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadDocumentRelatedToJobResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strLogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TowhomSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conversation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="eType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateNewMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateBulkMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TowhomSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conversation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateBulkMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateBulkMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadMailDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sentype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadMailDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadMailDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMailFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMailFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadMailFileResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RecId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file_type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownLoadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckedItems" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CloseMailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConversationDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conv_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConversationDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConversationDetailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RootFileToServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RootFileToServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RootFileToServerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTextData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTextDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertTextDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DirectoryCleanupUtility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DirectoryCleanupDay" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DirectoryCleanupUtilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DirectoryCleanupUtilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppUnitExpCommRemarkIns">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReqId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emp_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppUnitExpCommRemarkInsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AppUnitExpCommRemarkInsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pUpdateQueries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prm_3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pUpdateQueriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUpdateQueriesResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_ComplaintWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="complcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remarksby" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remarks" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="extension" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="logic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_ComplaintWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_ComplaintWebResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetQueryResultSoapIn">
+    <wsdl:part name="parameters" element="tns:GetQueryResult" />
+  </wsdl:message>
+  <wsdl:message name="GetQueryResultSoapOut">
+    <wsdl:part name="parameters" element="tns:GetQueryResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueeryExecuteSoapIn">
+    <wsdl:part name="parameters" element="tns:QueeryExecute" />
+  </wsdl:message>
+  <wsdl:message name="QueeryExecuteSoapOut">
+    <wsdl:part name="parameters" element="tns:QueeryExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="createNewJobSoapIn">
+    <wsdl:part name="parameters" element="tns:createNewJob" />
+  </wsdl:message>
+  <wsdl:message name="createNewJobSoapOut">
+    <wsdl:part name="parameters" element="tns:createNewJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocumentRelatedToJobSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadDocumentRelatedToJob" />
+  </wsdl:message>
+  <wsdl:message name="UploadDocumentRelatedToJobSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadDocumentRelatedToJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmails" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewMailSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewMail" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewMailSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBulkMailSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBulkMail" />
+  </wsdl:message>
+  <wsdl:message name="CreateBulkMailSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBulkMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadMailDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadMailDocument" />
+  </wsdl:message>
+  <wsdl:message name="UploadMailDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadMailDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMailFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadMailFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMailFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadMailFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownLoadFile" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownLoadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseMailSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseMail" />
+  </wsdl:message>
+  <wsdl:message name="CloseMailSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConversationDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConversationDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetConversationDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConversationDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="RootFileToServerSoapIn">
+    <wsdl:part name="parameters" element="tns:RootFileToServer" />
+  </wsdl:message>
+  <wsdl:message name="RootFileToServerSoapOut">
+    <wsdl:part name="parameters" element="tns:RootFileToServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertTextDataSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTextData" />
+  </wsdl:message>
+  <wsdl:message name="InsertTextDataSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTextDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryCleanupUtilitySoapIn">
+    <wsdl:part name="parameters" element="tns:DirectoryCleanupUtility" />
+  </wsdl:message>
+  <wsdl:message name="DirectoryCleanupUtilitySoapOut">
+    <wsdl:part name="parameters" element="tns:DirectoryCleanupUtilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="AppUnitExpCommRemarkInsSoapIn">
+    <wsdl:part name="parameters" element="tns:AppUnitExpCommRemarkIns" />
+  </wsdl:message>
+  <wsdl:message name="AppUnitExpCommRemarkInsSoapOut">
+    <wsdl:part name="parameters" element="tns:AppUnitExpCommRemarkInsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="pUpdateQueriesSoapIn">
+    <wsdl:part name="parameters" element="tns:pUpdateQueries" />
+  </wsdl:message>
+  <wsdl:message name="pUpdateQueriesSoapOut">
+    <wsdl:part name="parameters" element="tns:pUpdateQueriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ComplaintWebSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_ComplaintWeb" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ComplaintWebSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_ComplaintWebResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WorkStation_WebServicesSoap">
+    <wsdl:operation name="GetQueryResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Dataset of against q Query from given database</wsdl:documentation>
+      <wsdl:input message="tns:GetQueryResultSoapIn" />
+      <wsdl:output message="tns:GetQueryResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueeryExecute">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Execute against q Query from given database</wsdl:documentation>
+      <wsdl:input message="tns:QueeryExecuteSoapIn" />
+      <wsdl:output message="tns:QueeryExecuteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createNewJob">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">New Job Assignment </wsdl:documentation>
+      <wsdl:input message="tns:createNewJobSoapIn" />
+      <wsdl:output message="tns:createNewJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentRelatedToJob">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload Document Associated with Job</wsdl:documentation>
+      <wsdl:input message="tns:UploadDocumentRelatedToJobSoapIn" />
+      <wsdl:output message="tns:UploadDocumentRelatedToJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get eMails </wsdl:documentation>
+      <wsdl:input message="tns:GetEmailsSoapIn" />
+      <wsdl:output message="tns:GetEmailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewMail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create New Mails </wsdl:documentation>
+      <wsdl:input message="tns:CreateNewMailSoapIn" />
+      <wsdl:output message="tns:CreateNewMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBulkMail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create New Mails </wsdl:documentation>
+      <wsdl:input message="tns:CreateBulkMailSoapIn" />
+      <wsdl:output message="tns:CreateBulkMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadMailDocument">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload Mail Document</wsdl:documentation>
+      <wsdl:input message="tns:UploadMailDocumentSoapIn" />
+      <wsdl:output message="tns:UploadMailDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMailFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Download Mail File</wsdl:documentation>
+      <wsdl:input message="tns:DownloadMailFileSoapIn" />
+      <wsdl:output message="tns:DownloadMailFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">DownLoad File</wsdl:documentation>
+      <wsdl:input message="tns:DownLoadFileSoapIn" />
+      <wsdl:output message="tns:DownLoadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseMail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Close Mails</wsdl:documentation>
+      <wsdl:input message="tns:CloseMailSoapIn" />
+      <wsdl:output message="tns:CloseMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConversationDetail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Conversation Detail</wsdl:documentation>
+      <wsdl:input message="tns:GetConversationDetailSoapIn" />
+      <wsdl:output message="tns:GetConversationDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RootFileToServer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Root file to Server </wsdl:documentation>
+      <wsdl:input message="tns:RootFileToServerSoapIn" />
+      <wsdl:output message="tns:RootFileToServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTextData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Work Station Insert Text Data </wsdl:documentation>
+      <wsdl:input message="tns:InsertTextDataSoapIn" />
+      <wsdl:output message="tns:InsertTextDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryCleanupUtility">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deleting Old images of given days</wsdl:documentation>
+      <wsdl:input message="tns:DirectoryCleanupUtilitySoapIn" />
+      <wsdl:output message="tns:DirectoryCleanupUtilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AppUnitExpCommRemarkIns">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Approval Unit Expense</wsdl:documentation>
+      <wsdl:input message="tns:AppUnitExpCommRemarkInsSoapIn" />
+      <wsdl:output message="tns:AppUnitExpCommRemarkInsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Send SMS to a Single No.</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pUpdateQueries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Queries</wsdl:documentation>
+      <wsdl:input message="tns:pUpdateQueriesSoapIn" />
+      <wsdl:output message="tns:pUpdateQueriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ComplaintWeb">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert Complaint Web</wsdl:documentation>
+      <wsdl:input message="tns:Insert_ComplaintWebSoapIn" />
+      <wsdl:output message="tns:Insert_ComplaintWebSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorkStation_WebServicesSoap" type="tns:WorkStation_WebServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQueryResult">
+      <soap:operation soapAction="http://tempuri.org/GetQueryResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueeryExecute">
+      <soap:operation soapAction="http://tempuri.org/QueeryExecute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewJob">
+      <soap:operation soapAction="http://tempuri.org/createNewJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentRelatedToJob">
+      <soap:operation soapAction="http://tempuri.org/UploadDocumentRelatedToJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <soap:operation soapAction="http://tempuri.org/GetEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewMail">
+      <soap:operation soapAction="http://tempuri.org/CreateNewMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBulkMail">
+      <soap:operation soapAction="http://tempuri.org/CreateBulkMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMailDocument">
+      <soap:operation soapAction="http://tempuri.org/UploadMailDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMailFile">
+      <soap:operation soapAction="http://tempuri.org/DownloadMailFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <soap:operation soapAction="http://tempuri.org/DownLoadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseMail">
+      <soap:operation soapAction="http://tempuri.org/CloseMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConversationDetail">
+      <soap:operation soapAction="http://tempuri.org/GetConversationDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RootFileToServer">
+      <soap:operation soapAction="http://tempuri.org/RootFileToServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTextData">
+      <soap:operation soapAction="http://tempuri.org/InsertTextData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryCleanupUtility">
+      <soap:operation soapAction="http://tempuri.org/DirectoryCleanupUtility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppUnitExpCommRemarkIns">
+      <soap:operation soapAction="http://tempuri.org/AppUnitExpCommRemarkIns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pUpdateQueries">
+      <soap:operation soapAction="http://tempuri.org/pUpdateQueries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ComplaintWeb">
+      <soap:operation soapAction="http://tempuri.org/Insert_ComplaintWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WorkStation_WebServicesSoap12" type="tns:WorkStation_WebServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetQueryResult">
+      <soap12:operation soapAction="http://tempuri.org/GetQueryResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueeryExecute">
+      <soap12:operation soapAction="http://tempuri.org/QueeryExecute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewJob">
+      <soap12:operation soapAction="http://tempuri.org/createNewJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDocumentRelatedToJob">
+      <soap12:operation soapAction="http://tempuri.org/UploadDocumentRelatedToJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <soap12:operation soapAction="http://tempuri.org/GetEmails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewMail">
+      <soap12:operation soapAction="http://tempuri.org/CreateNewMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBulkMail">
+      <soap12:operation soapAction="http://tempuri.org/CreateBulkMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMailDocument">
+      <soap12:operation soapAction="http://tempuri.org/UploadMailDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMailFile">
+      <soap12:operation soapAction="http://tempuri.org/DownloadMailFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <soap12:operation soapAction="http://tempuri.org/DownLoadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseMail">
+      <soap12:operation soapAction="http://tempuri.org/CloseMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConversationDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetConversationDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RootFileToServer">
+      <soap12:operation soapAction="http://tempuri.org/RootFileToServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTextData">
+      <soap12:operation soapAction="http://tempuri.org/InsertTextData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DirectoryCleanupUtility">
+      <soap12:operation soapAction="http://tempuri.org/DirectoryCleanupUtility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppUnitExpCommRemarkIns">
+      <soap12:operation soapAction="http://tempuri.org/AppUnitExpCommRemarkIns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pUpdateQueries">
+      <soap12:operation soapAction="http://tempuri.org/pUpdateQueries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ComplaintWeb">
+      <soap12:operation soapAction="http://tempuri.org/Insert_ComplaintWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorkStation_WebServices">
+    <wsdl:port name="WorkStation_WebServicesSoap" binding="tns:WorkStation_WebServicesSoap">
+      <soap:address location="http://exproserver/exprologic/WorkStation_WebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WorkStation_WebServicesSoap12" binding="tns:WorkStation_WebServicesSoap12">
+      <soap12:address location="http://exproserver/exprologic/WorkStation_WebServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

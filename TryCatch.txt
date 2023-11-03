@@ -1,0 +1,9 @@
+﻿            try
+            {
+                DialogResult res = MessageBox.Show("Are you want to Print", "Expro Help", MessageBoxButtons.YesNo);
+            }
+            catch (Exception ex)
+            {
+                GlobalUsage.us.SaveErrorLog("HOLKO", "eIm_Data", ErrorTracker.ErrorHistory(ex));
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }

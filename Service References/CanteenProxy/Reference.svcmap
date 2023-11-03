@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="577e8170-4337-4955-a927-14ce284041c0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/CanteenService/ChandanCanteenService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ChandanCanteenService4.xsd" MetadataType="Schema" ID="9682cc75-2077-4923-9987-7dce4435b0d2" SourceId="1" SourceUrl="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ChandanCanteenService5.xsd" MetadataType="Schema" ID="9c41c926-2f9c-4854-bbe9-d1ee69d5baab" SourceId="1" SourceUrl="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ChandanCanteenService6.xsd" MetadataType="Schema" ID="2f472ec5-361b-4045-96e5-274567cf9c13" SourceId="1" SourceUrl="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ChandanCanteenService7.xsd" MetadataType="Schema" ID="c0f996bb-403e-4037-a166-6735545e69ac" SourceId="1" SourceUrl="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ChandanCanteenService1.disco" MetadataType="Disco" ID="56559c3b-50a7-4737-ae96-5ccf5fcae10b" SourceId="1" SourceUrl="http://localhost/CanteenService/ChandanCanteenService.svc?disco" />
+    <MetadataFile FileName="ChandanCanteenService1.wsdl" MetadataType="Wsdl" ID="c6ba1070-94c4-41da-a548-df0c3dcd54ea" SourceId="1" SourceUrl="http://localhost/CanteenService/ChandanCanteenService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

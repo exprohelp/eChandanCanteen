@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ChandanCanteenService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost/CanteenService/ChandanCanteenService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IChandanCanteenService_Insert_Modify_item_master_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Modify_item_master" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_Insert_Modify_item_master_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_Modify_item_masterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_GetQueryResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryResult" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_GetQueryResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueryResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_QueryExecute_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryExecute" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_QueryExecute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_feedCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:feedCategory" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_feedCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:feedCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_getVendorDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVendorDetail" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_getVendorDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVendorDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_NewAndModifyVendor_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewAndModifyVendor" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_NewAndModifyVendor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewAndModifyVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_fillState_InputMessage">
+    <wsdl:part name="parameters" element="tns:fillState" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_fillState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fillStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_fillDistrict_InputMessage">
+    <wsdl:part name="parameters" element="tns:fillDistrict" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_fillDistrict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fillDistrictResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_getPurchIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPurchIds" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_getPurchIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPurchIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_Ins_Purchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ins_Purchase" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_Ins_Purchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Ins_PurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_getPurchaseRecordByPurchId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPurchaseRecordByPurchId" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_getPurchaseRecordByPurchId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPurchaseRecordByPurchIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_Delete_Purchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_Purchase" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_Delete_Purchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Delete_PurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_PurchasePosting_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurchasePosting" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_PurchasePosting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurchasePostingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_feedProductIssueDept_InputMessage">
+    <wsdl:part name="parameters" element="tns:feedProductIssueDept" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_feedProductIssueDept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:feedProductIssueDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_IssueToUse_InputMessage">
+    <wsdl:part name="parameters" element="tns:IssueToUse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_IssueToUse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IssueToUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_Retail_InsertSale_InputMessage">
+    <wsdl:part name="parameters" element="tns:Retail_InsertSale" />
+  </wsdl:message>
+  <wsdl:message name="IChandanCanteenService_Retail_InsertSale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Retail_InsertSaleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IChandanCanteenService">
+    <wsdl:operation name="Insert_Modify_item_master">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/Insert_Modify_item_master" message="tns:IChandanCanteenService_Insert_Modify_item_master_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/Insert_Modify_item_masterResponse" message="tns:IChandanCanteenService_Insert_Modify_item_master_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/GetQueryResult" message="tns:IChandanCanteenService_GetQueryResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/GetQueryResultResponse" message="tns:IChandanCanteenService_GetQueryResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryExecute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/QueryExecute" message="tns:IChandanCanteenService_QueryExecute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/QueryExecuteResponse" message="tns:IChandanCanteenService_QueryExecute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="feedCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/feedCategory" message="tns:IChandanCanteenService_feedCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/feedCategoryResponse" message="tns:IChandanCanteenService_feedCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVendorDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/getVendorDetail" message="tns:IChandanCanteenService_getVendorDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/getVendorDetailResponse" message="tns:IChandanCanteenService_getVendorDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewAndModifyVendor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/NewAndModifyVendor" message="tns:IChandanCanteenService_NewAndModifyVendor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/NewAndModifyVendorResponse" message="tns:IChandanCanteenService_NewAndModifyVendor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fillState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/fillState" message="tns:IChandanCanteenService_fillState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/fillStateResponse" message="tns:IChandanCanteenService_fillState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fillDistrict">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/fillDistrict" message="tns:IChandanCanteenService_fillDistrict_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/fillDistrictResponse" message="tns:IChandanCanteenService_fillDistrict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPurchIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/getPurchIds" message="tns:IChandanCanteenService_getPurchIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/getPurchIdsResponse" message="tns:IChandanCanteenService_getPurchIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ins_Purchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/Ins_Purchase" message="tns:IChandanCanteenService_Ins_Purchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/Ins_PurchaseResponse" message="tns:IChandanCanteenService_Ins_Purchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPurchaseRecordByPurchId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/getPurchaseRecordByPurchId" message="tns:IChandanCanteenService_getPurchaseRecordByPurchId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/getPurchaseRecordByPurchIdResponse" message="tns:IChandanCanteenService_getPurchaseRecordByPurchId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Purchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/Delete_Purchase" message="tns:IChandanCanteenService_Delete_Purchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/Delete_PurchaseResponse" message="tns:IChandanCanteenService_Delete_Purchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurchasePosting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/PurchasePosting" message="tns:IChandanCanteenService_PurchasePosting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/PurchasePostingResponse" message="tns:IChandanCanteenService_PurchasePosting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="feedProductIssueDept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/feedProductIssueDept" message="tns:IChandanCanteenService_feedProductIssueDept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/feedProductIssueDeptResponse" message="tns:IChandanCanteenService_feedProductIssueDept_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueToUse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/IssueToUse" message="tns:IChandanCanteenService_IssueToUse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/IssueToUseResponse" message="tns:IChandanCanteenService_IssueToUse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Retail_InsertSale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChandanCanteenService/Retail_InsertSale" message="tns:IChandanCanteenService_Retail_InsertSale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChandanCanteenService/Retail_InsertSaleResponse" message="tns:IChandanCanteenService_Retail_InsertSale_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IChandanCanteenService" type="tns:IChandanCanteenService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Insert_Modify_item_master">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/Insert_Modify_item_master" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueryResult">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/GetQueryResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryExecute">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/QueryExecute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feedCategory">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/feedCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVendorDetail">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/getVendorDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewAndModifyVendor">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/NewAndModifyVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillState">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/fillState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fillDistrict">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/fillDistrict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPurchIds">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/getPurchIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ins_Purchase">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/Ins_Purchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPurchaseRecordByPurchId">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/getPurchaseRecordByPurchId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Purchase">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/Delete_Purchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PurchasePosting">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/PurchasePosting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="feedProductIssueDept">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/feedProductIssueDept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueToUse">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/IssueToUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retail_InsertSale">
+      <soap:operation soapAction="http://tempuri.org/IChandanCanteenService/Retail_InsertSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChandanCanteenService">
+    <wsdl:port name="BasicHttpBinding_IChandanCanteenService" binding="tns:BasicHttpBinding_IChandanCanteenService">
+      <soap:address location="http://localhost/CanteenService/ChandanCanteenService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

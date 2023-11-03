@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileToWebServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileToWebServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFileToWebServerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFileFromWebServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownLoadFileFromWebServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownLoadFileFromWebServerResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TowhomSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conversation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContinueMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TowhomSent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conversation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContinueMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContinueMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileToWebServerSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFileToWebServer" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileToWebServerSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileToWebServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileFromWebServerSoapIn">
+    <wsdl:part name="parameters" element="tns:DownLoadFileFromWebServer" />
+  </wsdl:message>
+  <wsdl:message name="DownLoadFileFromWebServerSoapOut">
+    <wsdl:part name="parameters" element="tns:DownLoadFileFromWebServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewMailSoapIn">
+    <wsdl:part name="parameters" element="tns:NewMail" />
+  </wsdl:message>
+  <wsdl:message name="NewMailSoapOut">
+    <wsdl:part name="parameters" element="tns:NewMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContinueMailSoapIn">
+    <wsdl:part name="parameters" element="tns:ContinueMail" />
+  </wsdl:message>
+  <wsdl:message name="ContinueMailSoapOut">
+    <wsdl:part name="parameters" element="tns:ContinueMailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InternalMail_WebServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileToWebServer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Upload File to Server</wsdl:documentation>
+      <wsdl:input message="tns:UploadFileToWebServerSoapIn" />
+      <wsdl:output message="tns:UploadFileToWebServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFileFromWebServer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">DownLoad File</wsdl:documentation>
+      <wsdl:input message="tns:DownLoadFileFromWebServerSoapIn" />
+      <wsdl:output message="tns:DownLoadFileFromWebServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewMail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">New Mails </wsdl:documentation>
+      <wsdl:input message="tns:NewMailSoapIn" />
+      <wsdl:output message="tns:NewMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ContinueMail">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Continue Mails</wsdl:documentation>
+      <wsdl:input message="tns:ContinueMailSoapIn" />
+      <wsdl:output message="tns:ContinueMailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InternalMail_WebServiceSoap" type="tns:InternalMail_WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileToWebServer">
+      <soap:operation soapAction="http://tempuri.org/UploadFileToWebServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFileFromWebServer">
+      <soap:operation soapAction="http://tempuri.org/DownLoadFileFromWebServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMail">
+      <soap:operation soapAction="http://tempuri.org/NewMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContinueMail">
+      <soap:operation soapAction="http://tempuri.org/ContinueMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InternalMail_WebServiceSoap12" type="tns:InternalMail_WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileToWebServer">
+      <soap12:operation soapAction="http://tempuri.org/UploadFileToWebServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFileFromWebServer">
+      <soap12:operation soapAction="http://tempuri.org/DownLoadFileFromWebServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewMail">
+      <soap12:operation soapAction="http://tempuri.org/NewMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ContinueMail">
+      <soap12:operation soapAction="http://tempuri.org/ContinueMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InternalMail_WebService">
+    <wsdl:port name="InternalMail_WebServiceSoap" binding="tns:InternalMail_WebServiceSoap">
+      <soap:address location="http://chandan.co.in/MailService/InternalMail_WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InternalMail_WebServiceSoap12" binding="tns:InternalMail_WebServiceSoap12">
+      <soap12:address location="http://chandan.co.in/MailService/InternalMail_WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
